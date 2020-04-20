@@ -2,7 +2,7 @@ const express = require('express');
 const cors = require('cors');
 const bodyParser = require('body-parser');
 const mongoClient = require('mongodb').MongoClient;
-const apiRoutes = require("./api-routes");
+//const apiRoutes = require("./api-routes");
 
 let port = 8080;
 
@@ -27,7 +27,7 @@ mongoClient.connect(url, { useUnifiedTopology: true } , (err, db) => {
   db.close();
 });
 
-app.get('/', (req, res) => {
+app.get('/get', (req, res) => {
   mongoClient.connect(url, { useNewUrlParser: true }, (err, client) => {
     if (err) return console.log(err)
 
@@ -44,7 +44,7 @@ app.get('/', (req, res) => {
   })
 });
 
-app.use('/get', apiRoutes);
+//app.use('/get', apiRoutes);
 
 app.listen(port, () => {
   console.log('todo list RESTful API server started on: ' + port);

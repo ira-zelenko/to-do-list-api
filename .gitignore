@@ -1,0 +1,12 @@
+# node js modules
+/node_modules/
+yarn-error.log
+
+# phpstorm project files
+.idea
+
+# Mac DS_Store Files
+.DS_Store
+
+# development logs
+/dev.log
